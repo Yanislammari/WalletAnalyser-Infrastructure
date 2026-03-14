@@ -1,1 +1,4 @@
 cors_frontend_addresses = [] # All Frontend addresses allowed to communicate with the Backend API
+postgresql_admin_username = "" # PostgreSQL Admin Username
+postgresql_admin_password = "" # PostgreSQL Admin Password
+allowed_ips = [] # All IPs allowed to connect to the PostgreSQL Server
