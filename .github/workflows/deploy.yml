@@ -1,0 +1,38 @@
+name: Deploy Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+
+      #TF_VAR_cors_frontend_addresses: ${{ secrets.TF_VAR_cors_frontend_addresses }}
+      #TF_VAR_postgresql_admin_username: ${{ secrets.TF_VAR_postgresql_admin_username }}
+      #TF_VAR_postgresql_admin_password: ${{ secrets.TF_VAR_postgresql_admin_password }}
+      #TF_VAR_allowed_ips: ${{ secrets.TF_VAR_allowed_ips }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.0
+
+      - name: Terraform Init
+        working-directory: infrastructure
+        run: terraform init -input=false
+
+      - name: Terraform Apply
+        working-directory: infrastructure
+        run: terraform apply -auto-approve -input=false
