@@ -1,0 +1,20 @@
+variable "cors_frontend_addresses" {
+  description = "CORS allowed origin for the backend API"
+  type        = list(string)
+}
+
+variable "postgresql_admin_username" {
+  description = "Username for the PostgreSQL administrator account"
+  type        = string
+}
+
+variable "postgresql_admin_password" {
+  description = "Password for the PostgreSQL administrator account"
+  type        = string
+  sensitive   = true
+}
+
+variable "allowed_ips" {
+  description = "List of IP addresses allowed to access the PostgreSQL server"
+  type        = list(string)
+}
