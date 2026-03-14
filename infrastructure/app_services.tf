@@ -23,6 +23,11 @@ resource "azurerm_linux_web_app" "walletanalyser_frontend" {
     "WEBSITES_PORT"       = "80"
     "PORT"                = "80"
     "DOCKER_ENABLE_CI_CD" = "true"
+
+    "WEBSITE_RUN_FROM_PACKAGE"         = "1"
+    "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
+
+    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
   }
 
   identity {
@@ -56,6 +61,11 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
     "PORT"                = "8080"
     "FRONTEND_ADDRESS"    = join(",", var.cors_frontend_addresses)
     "DOCKER_ENABLE_CI_CD" = "true"
+
+    "WEBSITE_RUN_FROM_PACKAGE"         = "1"
+    "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
+
+    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
   }
 
   identity {
@@ -88,6 +98,11 @@ resource "azurerm_linux_web_app" "walletanalyser_admin" {
     "WEBSITES_PORT"       = "80"
     "PORT"                = "80"
     "DOCKER_ENABLE_CI_CD" = "true"
+
+    "WEBSITE_RUN_FROM_PACKAGE"         = "1"
+    "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
+
+    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
   }
 
   identity {
