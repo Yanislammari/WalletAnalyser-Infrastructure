@@ -99,6 +99,8 @@ postgresql_admin_password = "" # PostgreSQL admin password
 allowed_ips = [] # IP addresses allowed to connect to the PostgreSQL server
 aim_users_rg = [] # All guests emails in the tenant
 
+tenant_id = "" # Azure Tenant ID
+
 storage_account_name = "" # Azure storage account name
 portfolio_blob_container = "" # Blob container storing portfolio imports
 ```

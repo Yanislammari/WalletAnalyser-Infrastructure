@@ -23,3 +23,8 @@ variable "aim_users_rg" {
   description = "Name of the resource group containing the AIM users"
   type        = list(string)
 } 
+
+variable "tenant_id" {
+  description = "Azure Active Directory tenant ID for the subscription"
+  type        = string
+}

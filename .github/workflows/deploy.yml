@@ -20,6 +20,7 @@ jobs:
       TF_VAR_postgresql_admin_password: ${{ secrets.TF_VAR_postgresql_admin_password }}
       TF_VAR_allowed_ips: ${{ secrets.TF_VAR_allowed_ips }}
       TF_VAR_aim_users_rg: ${{ secrets.TF_VAR_aim_users_rg }}
+      TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
 
     steps:
       - name: Checkout
