@@ -18,3 +18,8 @@ variable "allowed_ips" {
   description = "List of IP addresses allowed to access the PostgreSQL server"
   type        = list(string)
 }
+
+variable "aim_users_rg" {
+  description = "Name of the resource group containing the AIM users"
+  type        = list(string)
+} 
