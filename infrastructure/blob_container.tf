@@ -3,3 +3,9 @@ resource "azurerm_storage_container" "uploads" {
   storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "blob"
 }
+
+resource "azurerm_storage_container" "templates" {
+  name                  = "templates"
+  storage_account_id    = azurerm_storage_account.storage.id
+  container_access_type = "blob"
+}
