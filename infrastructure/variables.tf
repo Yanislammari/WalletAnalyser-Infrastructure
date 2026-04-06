@@ -28,3 +28,8 @@ variable "tenant_id" {
   description = "Azure Active Directory tenant ID for the subscription"
   type        = string
 }
+
+variable "client_id" {
+  description = "Client ID of the service principal used by Terraform"
+  type        = string
+}

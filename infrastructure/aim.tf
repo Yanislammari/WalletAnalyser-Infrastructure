@@ -12,3 +12,16 @@ resource "azurerm_role_assignment" "rg_access" {
   role_definition_name = "Contributor"
   principal_id         = each.value.user_id
 }
+
+data "azuread_service_principal" "terraform_sp" {
+  client_id = var.client_id
+}
+
+resource "azuread_directory_role" "guest_inviter" {
+  display_name = "Guest Inviter"
+}
+
+resource "azuread_directory_role_assignment" "sp_guest_inviter" {
+  principal_object_id = data.azuread_service_principal.terraform_sp.object_id
+  role_id             = azuread_directory_role.guest_inviter.object_id
+}
