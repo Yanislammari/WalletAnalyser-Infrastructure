@@ -2,3 +2,4 @@ cors_frontend_addresses = [] # All Frontend addresses allowed to communicate wit
 postgresql_admin_username = "" # PostgreSQL Admin Username
 postgresql_admin_password = "" # PostgreSQL Admin Password
 allowed_ips = [] # All IPs allowed to connect to the PostgreSQL Server
+aim_users_rg = [] # All guests emails in the tenant
