@@ -64,8 +64,25 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
-
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+
+    "SECRET_KEY"  = var.secret_key
+    "TOKEN_SECRET" = var.token_secret
+
+    "GOOGLE_OAUTH_CLIENT_ID" = var.b_google_oauth_client_id
+
+    "MJ_API_KEY"    = var.mj_api_key
+    "MJ_API_SECRET" = var.mj_api_secret
+    "MJ_SENDER"     = var.mj_sender
+
+    "AZURE_STORAGE_CONNECTION_STRING" = var.azure_blob_storage_connection_string
+    "AZURE_STORAGE_CONTAINER_TEMPLATES" = var.azure_blob_storage_container_name_templates
+    "AZURE_STORAGE_CONTAINER_UPLOADS"  = var.azure_blob_storage_container_name_uploads
+
+    "FRONTEND_URL" = var.frontend_url_prod
+
+    "MARKETSTACK_API_URL" = var.api_marketstack_url
+    "MARKETSTACK_API_KEY" = var.api_marketstack_key
   }
 
   identity {
@@ -101,8 +118,11 @@ resource "azurerm_linux_web_app" "walletanalyser_admin" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
-
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+
+    "REACT_APP_BACKEND_URL" = var.backend_base_url
+
+    "REACT_APP_GOOGLE_CLIENT_ID" = var.f_google_oauth_client_id
   }
 
   identity {
