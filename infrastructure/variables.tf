@@ -42,6 +42,12 @@ variable "cors_frontend_addresses" {
   type        = list(string)
 }
 
+variable "database_url" {
+  description = "Database connection URL for the backend"
+  type        = string
+  sensitive   = true
+}
+
 variable "secret_key" {
   description = "JWT secret key"
   type        = string

@@ -24,6 +24,7 @@ jobs:
       TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }}
 
       TF_VAR_cors_frontend_addresses: ${{ secrets.TF_VAR_cors_frontend_addresses }}
+      TF_VAR_database_url: ${{ secrets.TF_VAR_database_url }}
 
       TF_VAR_secret_key: ${{ secrets.TF_VAR_secret_key }}
       TF_VAR_token_secret: ${{ secrets.TF_VAR_token_secret }}
