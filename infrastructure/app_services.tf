@@ -26,8 +26,11 @@ resource "azurerm_linux_web_app" "walletanalyser_frontend" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
-
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+
+    "VITE_BACKEND_BASE_URL" = var.backend_base_url
+
+    "VITE_GOOGLE_OAUTH_CLIENT_ID" = var.f_google_oauth_client_id
   }
 
   identity {
@@ -118,11 +121,8 @@ resource "azurerm_linux_web_app" "walletanalyser_admin" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
+
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
-
-    "REACT_APP_BACKEND_URL" = var.backend_base_url
-
-    "REACT_APP_GOOGLE_CLIENT_ID" = var.f_google_oauth_client_id
   }
 
   identity {
