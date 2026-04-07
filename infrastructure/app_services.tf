@@ -62,7 +62,7 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
   app_settings = {
     "WEBSITES_PORT"       = "8080"
     "PORT"                = "8080"
-    "FRONTEND_ADDRESS"    = join(",", var.cors_frontend_addresses)
+    "FRONTEND_ADDRESS" = jsonencode(var.cors_frontend_addresses)
     "DOCKER_ENABLE_CI_CD" = "true"
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
