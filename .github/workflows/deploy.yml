@@ -15,13 +15,35 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
-      TF_VAR_cors_frontend_addresses: ${{ secrets.TF_VAR_cors_frontend_addresses }}
       TF_VAR_postgresql_admin_username: ${{ secrets.TF_VAR_postgresql_admin_username }}
       TF_VAR_postgresql_admin_password: ${{ secrets.TF_VAR_postgresql_admin_password }}
       TF_VAR_allowed_ips: ${{ secrets.TF_VAR_allowed_ips }}
+
       TF_VAR_aim_users_rg: ${{ secrets.TF_VAR_aim_users_rg }}
       TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
       TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }}
+
+      TF_VAR_cors_frontend_addresses: ${{ secrets.TF_VAR_cors_frontend_addresses }}
+
+      TF_VAR_secret_key: ${{ secrets.TF_VAR_secret_key }}
+      TF_VAR_token_secret: ${{ secrets.TF_VAR_token_secret }}
+
+      TF_VAR_b_google_oauth_client_id: ${{ secrets.TF_VAR_b_google_oauth_client_id }}
+      TF_VAR_f_google_oauth_client_id: ${{ secrets.TF_VAR_f_google_oauth_client_id }}
+
+      TF_VAR_mj_api_key: ${{ secrets.TF_VAR_mj_api_key }}
+      TF_VAR_mj_api_secret: ${{ secrets.TF_VAR_mj_api_secret }}
+      TF_VAR_mj_sender: ${{ secrets.TF_VAR_mj_sender }}
+
+      TF_VAR_azure_blob_storage_connection_string: ${{ secrets.TF_VAR_azure_blob_storage_connection_string }}
+      TF_VAR_azure_blob_storage_container_name_templates: ${{ secrets.TF_VAR_azure_blob_storage_container_name_templates }}
+      TF_VAR_azure_blob_storage_container_name_uploads: ${{ secrets.TF_VAR_azure_blob_storage_container_name_uploads }}
+
+      TF_VAR_frontend_url_prod: ${{ secrets.TF_VAR_frontend_url_prod }}
+      TF_VAR_backend_base_url: ${{ secrets.TF_VAR_backend_base_url }}
+
+      TF_VAR_api_marketstack_url: ${{ secrets.TF_VAR_api_marketstack_url }}
+      TF_VAR_api_marketstack_key: ${{ secrets.TF_VAR_api_marketstack_key }}
 
     steps:
       - name: Checkout
