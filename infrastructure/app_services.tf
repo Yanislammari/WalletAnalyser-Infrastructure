@@ -80,11 +80,11 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
     "MJ_API_SECRET" = var.mj_api_secret
     "MJ_SENDER"     = var.mj_sender
 
-    "AZURE_STORAGE_CONNECTION_STRING" = var.azure_blob_storage_connection_string
-    "AZURE_STORAGE_CONTAINER_TEMPLATES" = var.azure_blob_storage_container_name_templates
-    "AZURE_STORAGE_CONTAINER_UPLOADS"  = var.azure_blob_storage_container_name_uploads
+    "AZURE_BLOB_STORAGE_CONNECTION_STRING" = var.azure_blob_storage_connection_string
+    "AZURE_BLOB_STORAGE_CONTAINER_NAME_TEMPLATES" = var.azure_blob_storage_container_name_templates
+    "AZURE_BLOB_STORAGE_CONTAINER_NAME_UPLOADS"  = var.azure_blob_storage_container_name_uploads
 
-    "FRONTEND_URL" = var.frontend_url_prod
+    "FRONTEND_URL_PROD" = var.frontend_url_prod
 
     "MARKETSTACK_API_URL" = var.api_marketstack_url
     "MARKETSTACK_API_KEY" = var.api_marketstack_key
