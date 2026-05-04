@@ -26,7 +26,7 @@ resource "azurerm_linux_web_app" "walletanalyser_frontend" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
-    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+    "APPINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
 
     "VITE_BACKEND_BASE_URL" = var.backend_base_url
 
@@ -67,7 +67,7 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
 
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
-    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+    "APPINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
 
     "DATABASE_URL" = var.database_url
 
@@ -124,7 +124,7 @@ resource "azurerm_linux_web_app" "walletanalyser_admin" {
     "WEBSITE_RUN_FROM_PACKAGE"         = "1"
     "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
 
-    "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+    "APPINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
   }
 
   identity {
