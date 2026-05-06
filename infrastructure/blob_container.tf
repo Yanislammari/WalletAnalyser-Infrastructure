@@ -9,3 +9,9 @@ resource "azurerm_storage_container" "templates" {
   storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "blob"
 }
+
+resource "azurerm_storage_container" "examples" {
+  name                  = "examples"
+  storage_account_id    = azurerm_storage_account.storage.id
+  container_access_type = "blob"
+}
