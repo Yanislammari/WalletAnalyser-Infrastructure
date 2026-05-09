@@ -12,6 +12,7 @@ resource "azurerm_linux_function_app" "walletanalyser_functions" {
   app_settings = {
     FUNCTIONS_WORKER_RUNTIME              = "node"
     WEBSITE_RUN_FROM_PACKAGE              = "1"
+    AzureWebJobsStorage                   = azurerm_storage_account.storage.primary_connection_string
     APPLICATIONINSIGHTS_CONNECTION_STRING = azurerm_application_insights.walletanalyser_appinsights.connection_string
     APPINSIGHTS_INSTRUMENTATIONKEY        = azurerm_application_insights.walletanalyser_appinsights.instrumentation_key
 
