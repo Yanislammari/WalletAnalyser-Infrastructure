@@ -21,6 +21,9 @@ resource "azurerm_linux_function_app" "walletanalyser_functions" {
     AZURE_BLOB_STORAGE_CONTAINER_NAME_UPLOADS   = var.azure_blob_storage_container_name_uploads
 
     DATABASE_URL = var.database_url
+
+    MARKETSTACK_API_URL = var.api_marketstack_url
+    MARKETSTACK_API_KEY = var.api_marketstack_key
   }
 
   site_config {
