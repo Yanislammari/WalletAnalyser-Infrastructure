@@ -131,3 +131,41 @@ resource "azurerm_linux_web_app" "walletanalyser_admin" {
     type = "SystemAssigned"
   }
 }
+
+resource "azurerm_linux_web_app" "walletanalyser_ai" {
+  name                = "app-walletanalyser-ai"
+  resource_group_name = azurerm_resource_group.walletanalyser_rg.name
+  location            = azurerm_resource_group.walletanalyser_rg.location
+  service_plan_id     = azurerm_service_plan.walletanalyser_asp.id
+
+  https_only = true
+
+  site_config {
+    always_on           = true
+    ftps_state          = "Disabled"
+    minimum_tls_version = "1.2"
+
+    application_stack {
+      docker_registry_url = "https://walletanalyseracr.azurecr.io"
+      docker_image_name   = "walletanalyser-ai:latest"
+    }
+
+    container_registry_use_managed_identity = true
+  }
+
+  app_settings = {
+    "WEBSITES_PORT"       = "8080"
+    "PORT"                = "8080"
+    "DOCKER_ENABLE_CI_CD" = "true"
+
+    "WEBSITE_RUN_FROM_PACKAGE"         = "1"
+    "APPLICATIONINSIGHTS_ENABLE_AGENT" = "true"
+    "APPINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.walletanalyser_appinsights.connection_string
+
+    "DATABASE_URL" = var.database_url
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+}
