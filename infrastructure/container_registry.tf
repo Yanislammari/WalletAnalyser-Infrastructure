@@ -23,3 +23,9 @@ resource "azurerm_role_assignment" "admin_acr_pull" {
   role_definition_name = "AcrPull"
   principal_id         = azurerm_linux_web_app.walletanalyser_admin.identity[0].principal_id
 }
+
+resource "azurerm_role_assignment" "ai_acr_pull" {
+  scope                = azurerm_container_registry.walletanalyser_acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_linux_web_app.walletanalyser_ai.identity[0].principal_id
+}
