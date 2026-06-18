@@ -83,6 +83,7 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
     "AZURE_BLOB_STORAGE_CONNECTION_STRING" = var.azure_blob_storage_connection_string
     "AZURE_BLOB_STORAGE_CONTAINER_NAME_TEMPLATES" = var.azure_blob_storage_container_name_templates
     "AZURE_BLOB_STORAGE_CONTAINER_NAME_UPLOADS"  = var.azure_blob_storage_container_name_uploads
+    "AZURE_BLOB_STORAGE_CONTAINER_NAME_EXEMPLES"  = var.azure_blob_storage_container_name_exemples
 
     "FRONTEND_URL_PROD" = var.frontend_url_prod
 

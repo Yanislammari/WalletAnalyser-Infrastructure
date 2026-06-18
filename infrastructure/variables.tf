@@ -98,6 +98,11 @@ variable "azure_blob_storage_container_name_uploads" {
   type        = string
 }
 
+variable "azure_blob_storage_container_name_exemples" {
+  description = "Blob container name for files exemples"
+  type        = string
+}
+
 variable "frontend_url_prod" {
   description = "Frontend production URL"
   type        = string
