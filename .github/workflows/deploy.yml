@@ -39,7 +39,7 @@ jobs:
       TF_VAR_azure_blob_storage_connection_string: ${{ secrets.TF_VAR_azure_blob_storage_connection_string }}
       TF_VAR_azure_blob_storage_container_name_templates: ${{ secrets.TF_VAR_azure_blob_storage_container_name_templates }}
       TF_VAR_azure_blob_storage_container_name_uploads: ${{ secrets.TF_VAR_azure_blob_storage_container_name_uploads }}
-        TF_VAR_azure_blob_storage_container_name_exemples: ${{ secrets.TF_VAR_azure_blob_storage_container_name_exemples }}
+      TF_VAR_azure_blob_storage_container_name_exemples: ${{ secrets.TF_VAR_azure_blob_storage_container_name_exemples }}
 
       TF_VAR_frontend_url_prod: ${{ secrets.TF_VAR_frontend_url_prod }}
       TF_VAR_backend_base_url: ${{ secrets.TF_VAR_backend_base_url }}
