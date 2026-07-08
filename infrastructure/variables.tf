@@ -98,7 +98,7 @@ variable "azure_blob_storage_container_name_uploads" {
   type        = string
 }
 
-variable "azure_blob_storage_container_name_exemples" {
+variable "azure_blob_storage_container_name_examples" {
   description = "Blob container name for files exemples"
   type        = string
 }
@@ -117,6 +117,11 @@ variable "api_marketstack_key" {
   description = "Marketstack API key"
   type        = string
   sensitive   = true
+}
+
+variable "base_url" {
+  description = "Base URL for the backend API"
+  type        = string
 }
 
 ## FRONTEND VARIABLES
