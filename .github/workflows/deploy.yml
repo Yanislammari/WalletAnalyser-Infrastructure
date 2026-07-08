@@ -45,6 +45,8 @@ jobs:
       TF_VAR_backend_base_url: ${{ secrets.TF_VAR_backend_base_url }}
 
       TF_VAR_base_url: ${{ secrets.TF_VAR_base_url }}
+      TF_VAR_python_base_url: ${{ secrets.TF_VAR_python_base_url }}
+      TF_VAR_stripe_api_key_secret: ${{ secrets.TF_VAR_stripe_api_key_secret }}
 
       TF_VAR_api_marketstack_url: ${{ secrets.TF_VAR_api_marketstack_url }}
       TF_VAR_api_marketstack_key: ${{ secrets.TF_VAR_api_marketstack_key }}

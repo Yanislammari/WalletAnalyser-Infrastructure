@@ -87,6 +87,9 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
 
     "BASE_URL" = var.base_url
 
+    "PYTHON_BASE_URL" = var.python_base_url
+    "STRIPE_API_KEY_SECRET" = var.stripe_api_key_secret
+
     "FRONTEND_URL_PROD" = var.frontend_url_prod
 
     "MARKETSTACK_API_URL" = var.api_marketstack_url

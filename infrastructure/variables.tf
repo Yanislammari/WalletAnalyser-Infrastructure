@@ -124,6 +124,17 @@ variable "base_url" {
   type        = string
 }
 
+variable "python_base_url" {
+  description = "Base URL for the Python backend API"
+  type        = string
+}
+
+variable "stripe_api_key_secret" {
+  description = "Stripe API secret key"
+  type        = string
+  sensitive   = true
+}
+
 ## FRONTEND VARIABLES
 
 variable "backend_base_url" {
