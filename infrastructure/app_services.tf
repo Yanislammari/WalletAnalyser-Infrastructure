@@ -92,8 +92,8 @@ resource "azurerm_linux_web_app" "walletanalyser_backend" {
 
     "FRONTEND_URL_PROD" = var.frontend_url_prod
 
-    "MARKETSTACK_API_URL" = var.api_marketstack_url
-    "MARKETSTACK_API_KEY" = var.api_marketstack_key
+    "API_MARKETSTACK_URL" = var.api_marketstack_url
+    "API_MARKETSTACK_KEY" = var.api_marketstack_key
   }
 
   identity {
